@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Digital Idea - Turn your ideas into digital reality. Expert website development, e-commerce solutions, branding, and digital marketing for growth-driven businesses.">
+  <meta name="keywords" content="digital marketing agency, web development, e-commerce solutions, branding, SEO, futuristic design">
+  <meta name="author" content="Digital Idea">
+  <title>Digital Idea | Futuristic Digital Marketing Agency</title>
+  <!-- Google Fonts: Modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050b14;
+      color: #eef5ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Neon accent colors */
+    :root {
+      --neon-blue: #0afff2;
+      --neon-green: #39ff14;
+      --dark-bg: #050b14;
+      --card-bg: #0f1725;
+      --border-glow: rgba(10, 255, 242, 0.2);
+      --glow-blue: 0 0 8px rgba(10, 255, 242, 0.6);
+      --glow-green: 0 0 8px rgba(57, 255, 20, 0.6);
+    }
+
+    /* smooth container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid rgba(10, 255, 242, 0.2);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ccddee;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--neon-blue);
+      text-shadow: var(--glow-blue);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: transparent;
+      border: 1.5px solid var(--neon-blue);
+      color: var(--neon-blue);
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s;
+      font-family: inherit;
+      font-size: 1rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-primary:hover {
+      background: rgba(10, 255, 242, 0.12);
+      box-shadow: var(--glow-blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(95deg, #0afff2, #39ff14);
+      border: none;
+      color: #01060c;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s;
+      font-family: inherit;
+      font-size: 1rem;
+      box-shadow: 0 0 10px rgba(10, 255, 242, 0.3);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 18px rgba(57, 255, 20, 0.5);
+    }
+
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 70px 0 90px;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff 30%, var(--neon-blue), var(--neon-green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #b9c8ff;
+      margin-bottom: 32px;
+      max-width: 550px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      flex: 1;
+      text-align: center;
+      font-size: 8rem;
+      filter: drop-shadow(0 0 12px var(--neon-blue));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* section headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: inline-block;
+      border-bottom: 3px solid var(--neon-green);
+      padding-bottom: 10px;
+    }
+
+    /* services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin: 40px 0;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 32px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(10, 255, 242, 0.15);
+      backdrop-filter: blur(2px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--neon-blue);
+      box-shadow: 0 20px 30px -15px rgba(10, 255, 242, 0.2);
+    }
+
+    .service-icon {
+      font-size: 3.2rem;
+      color: var(--neon-blue);
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #b0c4f0;
+      font-size: 0.95rem;
+    }
+
+    /* about section */
+    .about-wrap {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      flex-wrap: wrap;
+      background: rgba(15, 23, 37, 0.5);
+      border-radius: 40px;
+      padding: 40px;
+      margin: 40px 0;
+      border-left: 4px solid var(--neon-green);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      color: var(--neon-blue);
+      margin-bottom: 16px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .stat-item {
+      font-weight: 700;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      color: var(--neon-green);
+    }
+
+    /* portfolio cards */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .portfolio-item {
+      background: var(--card-bg);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: 0.25s;
+      border: 1px solid rgba(57, 255, 20, 0.2);
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.02);
+      border-color: var(--neon-green);
+      box-shadow: 0 10px 25px -5px rgba(57, 255, 20, 0.3);
+    }
+
+    .portfolio-img {
+      background: linear-gradient(145deg, #0a1525, #03070f);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--neon-blue);
+    }
+
+    .portfolio-info {
+      padding: 20px;
+    }
+
+    .portfolio-info h4 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    /* testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin: 40px 0;
+    }
+
+    .testimonial-card {
+      background: #0a111f;
+      border-radius: 24px;
+      padding: 28px;
+      transition: 0.2s;
+      border: 1px solid rgba(10, 255, 242, 0.2);
+    }
+
+    .testimonial-card i {
+      font-size: 2rem;
+      color: var(--neon-green);
+      opacity: 0.7;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin: 16px 0;
+      line-height: 1.5;
+    }
+
+    .client-name {
+      font-weight: 700;
+      color: var(--neon-blue);
+    }
+
+    /* contact section */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background: #0c1322;
+      border-radius: 36px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+
+    .contact-form {
+      flex: 1;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      background: #010712;
+      border: 1px solid #2a3a55;
+      border-radius: 20px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      color: white;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: var(--neon-blue);
+      outline: none;
+      box-shadow: 0 0 6px var(--neon-blue);
+    }
+
+    .contact-widgets {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .whatsapp-btn, .msg-btn {
+      background: #1f2a3e;
+      padding: 18px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+      color: white;
+    }
+
+    .whatsapp-btn:hover {
+      background: #25D366;
+      color: #000;
+      transform: translateX(8px);
+    }
+
+    .msg-btn:hover {
+      background: var(--neon-blue);
+      color: #01060c;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid rgba(10, 255, 242, 0.2);
+      margin-top: 40px;
+      color: #7c8fb0;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero {
+        padding: 40px 0;
+      }
+      .hero-visual {
+        font-size: 5rem;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .about-wrap {
+        padding: 24px;
+      }
+      .contact-wrapper {
+        padding: 24px;
+      }
+    }
+
+    /* animations on scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    .fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">DIGITAL IDEA</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div>
+      <button class="btn-primary" id="navConsultBtn">Free Consultation</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section (home) -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Turn Your Ideas into Digital Reality</h1>
+        <p>We transform concepts into powerful digital experiences — from AI-driven marketing to stunning web ecosystems. Strategy, design, growth.</p>
+        <div class="btn-group">
+          <button class="btn-secondary" id="heroConsultBtn">Get Free Consultation</button>
+          <button class="btn-primary" id="heroMsgBtn">Send Message</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <i class="fas fa-microchip"></i> <i class="fas fa-chart-line"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-header">
+      <h2>Core Services</h2>
+      <p style="color:#a0b9e0; margin-top:12px;">Scalable digital solutions to fuel your brand</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h3>Website Development</h3>
+        <p>Custom responsive websites, high-performance front-end & CMS — built for conversion and speed.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+        <h3>E-commerce Solutions</h3>
+        <p>Scalable online stores, secure payments, and seamless UX to maximize your digital revenue.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-palette"></i></div>
+        <h3>Branding & Design</h3>
+        <p>Identity design, visual storytelling, and next-gen branding that resonates with modern audiences.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-chart-simple"></i></div>
+        <h3>Digital Marketing</h3>
+        <p>SEO, social media strategy, PPC campaigns — data-driven tactics to scale your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about">
+    <div class="section-header">
+      <h2>Who We Are</h2>
+    </div>
+    <div class="about-wrap fade-up">
+      <div class="about-text">
+        <h3>Helping businesses grow online with smart strategies</h3>
+        <p>Digital Idea is a next-generation agency merging creative intelligence with technical precision. We don't just build websites — we architect growth ecosystems. From stealth startups to established brands, our mission is to turn ambition into measurable digital success.<br><br> We combine futuristic design, AI-driven analytics, and human-centric marketing to give you an unfair advantage.</p>
+        <div class="stats">
+          <div class="stat-item"><span class="stat-number">150+</span><br>Projects</div>
+          <div class="stat-item"><span class="stat-number">98%</span><br>Client Retention</div>
+          <div class="stat-item"><span class="stat-number">24/7</span><br>Support</div>
+        </div>
+      </div>
+      <div style="flex:0.6; text-align:center;"><i class="fas fa-rocket" style="font-size: 6rem; color: var(--neon-green);"></i></div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="section-header">
+      <h2>Digital Excellence</h2>
+      <p>Selected works & demos</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-img"><i class="fas fa-store"></i></div>
+        <div class="portfolio-info">
+          <h4>LUXE E-COMMERCE</h4>
+          <p>Full-stack marketplace with AI recommendations and 99% load speed improvement.</p>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-img"><i class="fas fa-chalkboard-user"></i></div>
+        <div class="portfolio-info">
+          <h4>FINWAVE DASHBOARD</h4>
+          <p>Financial analytics platform with futuristic UI and real-time data.</p>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-img"><i class="fas fa-bezier-curve"></i></div>
+        <div class="portfolio-info">
+          <h4>BRAND IDENTITY X</h4>
+          <p>Complete rebranding & digital campaign that boosted engagement by 210%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="section-header">
+      <h2>Client Stories</h2>
+      <p>Trusted by forward-thinking brands</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <i class="fas fa-quote-right"></i>
+        <div class="testimonial-text">“Digital Idea skyrocketed our online sales by 143% in just 4 months. Their e-commerce strategy and design are on another level.”</div>
+        <div class="client-name">— Sarah Chen, Founder of LUXStore</div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <i class="fas fa-quote-right"></i>
+        <div class="testimonial-text">“The team is incredibly innovative. From branding to execution, they’ve transformed our digital presence and lead generation.”</div>
+        <div class="client-name">— Marcus V., CMO at NexaTech</div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <i class="fas fa-quote-right"></i>
+        <div class="testimonial-text">“Best investment we’ve made. The website development and marketing alignment doubled our traffic in weeks. Highly recommended!”</div>
+        <div class="client-name">— Jasmine K., Creative Director</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (with form, WhatsApp and email) -->
+  <section id="contact">
+    <div class="section-header">
+      <h2>Let’s Connect</h2>
+      <p>Ready to scale? Reach out now.</p>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-form">
+        <form id="leadForm">
+          <input type="text" placeholder="Full Name" required id="nameInput">
+          <input type="email" placeholder="Email Address" required id="emailInput">
+          <input type="tel" placeholder="Phone (Optional)">
+          <textarea rows="4" placeholder="Tell us about your project..." required id="msgInput"></textarea>
+          <button type="submit" class="btn-secondary" style="width:100%;">Send Message →</button>
+        </form>
+        <p id="formFeedback" style="margin-top: 12px; font-size: 0.85rem; color: #39ff14;"></p>
+      </div>
+      <div class="contact-widgets">
+        <a href="https://wa.me/15551234567?text=Hello%20Digital%20Idea%20-%20I%20want%20to%20grow%20my%20business!" target="_blank" class="whatsapp-btn">
+          <i class="fab fa-whatsapp" style="font-size: 28px;"></i> Chat on WhatsApp
+        </a>
+        <a href="#" id="dmButton" class="msg-btn">
+          <i class="fas fa-paper-plane"></i> Direct Message / Quick Inquiry
+        </a>
+        <div class="contact-detail">
+          <i class="fas fa-envelope" style="color: var(--neon-blue); font-size: 1.8rem;"></i>
+          <span>hello@digitalidea.agency</span>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-globe" style="color: var(--neon-green);"></i>
+          <span>Schedule a call — 24h response</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Digital Idea — Igniting future-focused digital growth. All rights reserved.</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">Neon driven | Innovation first</p>
+  </footer>
+</div>
+
+<script>
+  // smooth scroll for nav-links
+  document.querySelectorAll('.nav-links a, .btn-primary, .btn-secondary').forEach(anchor => {
+    if(anchor.getAttribute('href') && anchor.getAttribute('href').startsWith('#')) {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId && targetId !== '#') {
+          e.preventDefault();
+          const targetElem = document.querySelector(targetId);
+          if(targetElem) {
+            targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    }
+  });
+
+  // specific consult buttons scroll to contact
+  const consultBtns = document.querySelectorAll('#heroConsultBtn, #navConsultBtn');
+  consultBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // send message buttons scroll to contact OR open quick alert
+  const msgBtns = document.querySelectorAll('#heroMsgBtn');
+  msgBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // DM button (alternative)
+  const dmBtn = document.getElementById('dmButton');
+  if(dmBtn) {
+    dmBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("💬 Quick message: You can also reach us at hello@digitalidea.agency or use the contact form above. Our team replies within 2 hours!");
+    });
+  }
+
+  // lead form handling (lead generation + conversion)
+  const leadForm = document.getElementById('leadForm');
+  const feedbackSpan = document.getElementById('formFeedback');
+
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('nameInput')?.value.trim();
+    const email = document.getElementById('emailInput')?.value.trim();
+    const message = document.getElementById('msgInput')?.value.trim();
+    if(!name || !email || !message) {
+      feedbackSpan.innerText = "⚠️ Please fill in all required fields (Name, Email, Message).";
+      feedbackSpan.style.color = "#ffb347";
+      return;
+    }
+    if(!email.includes('@') || !email.includes('.')) {
+      feedbackSpan.innerText = "⚠️ Please enter a valid email address.";
+      feedbackSpan.style.color = "#ff8c8c";
+      return;
+    }
+    // simulate sending lead data
+    console.log(`Lead: ${name}, ${email}, msg: ${message}`);
+    feedbackSpan.innerText = "✓ Message sent! Our team will reach out shortly (demo mode). 🚀";
+    feedbackSpan.style.color = "#39ff14";
+    leadForm.reset();
+    setTimeout(() => {
+      feedbackSpan.innerText = "";
+    }, 4000);
+    // optional: track conversion
+  });
+
+  // Intersection Observer for fade-up animations
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Also manual trigger on already visible elements after load
+  window.addEventListener('load', () => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight-100) {
+        el.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
